@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker run -d -p 4567:4567 --name spark-base bcreagh/mp-spark-base

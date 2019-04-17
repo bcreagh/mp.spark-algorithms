@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+./infrastructure/lifecycle/build
+./infrastructure/lifecycle/image
+./infrastructure/lifecycle/push

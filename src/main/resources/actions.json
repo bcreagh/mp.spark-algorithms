@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Hello World",
+    "description": "A simple hello world example",
+    "route": "hello-world",
+    "instructions": "Enter something (for example, your name) and see what happens!",
+    "readme": {
+      "data": ""
+    },
+    "examples": [
+      {
+        "name": "With own route",
+        "hasOwnRoute": true,
+        "route": "with-route"
+      },
+      {
+        "name": "Without own route",
+        "hasOwnRoute": false,
+        "input": "- this example uses the default hello-world route!"
+      }
+    ],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "TEXT",
+      "inputTemplate": "Brian"
+    }
+  }
+]

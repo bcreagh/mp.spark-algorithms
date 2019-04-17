@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker stop spark-base
+docker rm spark-base

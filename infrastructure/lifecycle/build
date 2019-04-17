@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+base_dir=$(realpath ./)
+
+docker run --rm -v $base_dir:/mp_spark-base --name spark-base-builder bcreagh/mp-spark-base-builder
