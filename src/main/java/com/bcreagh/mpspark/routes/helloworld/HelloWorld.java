@@ -34,7 +34,7 @@ public class HelloWorld extends BaseRoute {
             Logger.log("Handling the POST request", result);
             stopwatch.start();
             result.setInput(input.getInput());
-            result.setOutput("Hello " + input.getInput());
+            result.setOutput("A message from mp_spark-algos: HELLO " + input.getInput());
             long performance = stopwatch.stop();
             result.setPerformance(performance);
 

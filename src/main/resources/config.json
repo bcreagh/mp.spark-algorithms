@@ -1,4 +1,4 @@
 {
-  "port": 4567,
-  "serviceName": "spark-base"
+  "port": 4568,
+  "serviceName": "spark-algos"
 }

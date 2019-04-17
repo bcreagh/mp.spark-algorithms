@@ -1,2 +1,2 @@
 # mp.spark-base
-A base project using flask that future MP python projects can build upon
+A REST API which allows you to experiment with algorithms written in Java

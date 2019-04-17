@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker stop spark-base
-docker rm spark-base
+docker stop spark-algos
+docker rm spark-algos

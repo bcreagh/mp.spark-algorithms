@@ -1,5 +1,5 @@
 FROM maven
 
-WORKDIR /mp_spark-base
+WORKDIR /mp_spark-algos
 
 ENTRYPOINT ["./infrastructure/builder/entrypoint.sh"]
