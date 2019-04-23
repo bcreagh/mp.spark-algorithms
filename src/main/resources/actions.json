@@ -24,5 +24,20 @@
       "inputType": "TEXT",
       "inputTemplate": "Brian"
     }
+  },
+  {
+    "name": "Reverse",
+    "description": "Reverses and string",
+    "route": "reverse",
+    "instructions": "Enter a string. It will be reversed",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "TEXT",
+      "inputTemplate": "Brian"
+    }
   }
 ]
