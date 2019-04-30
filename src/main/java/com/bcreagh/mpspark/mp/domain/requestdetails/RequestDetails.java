@@ -3,7 +3,7 @@ package com.bcreagh.mpspark.mp.domain.requestdetails;
 public class RequestDetails {
     private HttpMethods httpMethod = HttpMethods.POST;
     private InputTypes inputType = InputTypes.JSON;
-    private String inputTemplate = "";
+    private Object inputTemplate = new Object();
 
     public RequestDetails() {
     }
@@ -30,7 +30,7 @@ public class RequestDetails {
         this.inputType = inputType;
     }
 
-    public String getInputTemplate() {
+    public Object getInputTemplate() {
         return inputTemplate;
     }
 

@@ -5,24 +5,24 @@ import com.bcreagh.mpspark.mp.utilities.logger.Log;
 import java.util.ArrayList;
 
 public class ActionResult {
-    private String input = "";
-    private String output = "";
+    private Object input;
+    private Object output;
     private ArrayList<Log> logs = new ArrayList<>();
     private long performance = -1;
 
-    public String getInput() {
+    public Object getInput() {
         return input;
     }
 
-    public void setInput(String input) {
+    public void setInput(Object input) {
         this.input = input;
     }
 
-    public String getOutput() {
+    public Object getOutput() {
         return output;
     }
 
-    public void setOutput(String output) {
+    public void setOutput(Object output) {
         this.output = output;
     }
 
