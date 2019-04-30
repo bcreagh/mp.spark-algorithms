@@ -39,5 +39,31 @@
       "inputType": "TEXT",
       "inputTemplate": "Brian"
     }
+  },
+  {
+    "name": "Quick Union",
+    "description": "An algorithms to solve the dynamic connectivity problem",
+    "route": "quick-union",
+    "instructions": "Connect nodes and test to see if they are connected",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "JSON",
+      "inputTemplate": {
+        "totalNodes": 10,
+        "union": [
+          [2, 5],
+          [3, 6],
+          [5, 6]
+        ],
+        "connected": [
+          [2, 6],
+          [3, 9]
+        ]
+      }
+    }
   }
 ]
