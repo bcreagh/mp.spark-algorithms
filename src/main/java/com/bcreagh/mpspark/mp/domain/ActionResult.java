@@ -4,7 +4,7 @@ import com.bcreagh.mpspark.mp.utilities.logger.Log;
 
 import java.util.ArrayList;
 
-public class ActionResult {
+public class ActionResult implements ActionResponse {
     private Object input;
     private Object output;
     private ArrayList<Log> logs = new ArrayList<>();
