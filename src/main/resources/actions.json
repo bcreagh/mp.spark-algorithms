@@ -65,5 +65,33 @@
         ]
       }
     }
+  },
+  {
+    "name": "Merge Sort",
+    "description": "An efficient divide and conquer sorting algorithm",
+    "route": "mergesort",
+    "instructions": "Input some numbers to be sorted",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "JSON",
+      "inputTemplate": [
+        345,
+        8,
+        98,
+        3352,
+        78,
+        9879,
+        112,
+        873,
+        976,
+        2875,
+        8676,
+        6432
+      ]
+    }
   }
 ]
