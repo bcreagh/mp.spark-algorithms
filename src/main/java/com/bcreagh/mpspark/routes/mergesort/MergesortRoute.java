@@ -11,7 +11,9 @@ import com.bcreagh.mpspark.routes.routeutils.IntArrayInput;
 import com.bcreagh.mpspark.routes.routeutils.MpRoute;
 import com.bcreagh.mpspark.services.ActionService;
 import com.bcreagh.mpspark.services.FileService;
+import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static spark.Spark.get;
@@ -39,8 +41,7 @@ public class MergesortRoute extends BaseRoute {
                 Stopwatch stopwatch = new Stopwatch();
                 String inputAsJson = request.body();
                 Logger.log(inputAsJson);
-                IntArrayInput body = parseJsonInput(inputAsJson, IntArrayInput.class);
-                Integer[] input = body.getInput();
+                Integer[] input = parseJsonInput(inputAsJson, Integer[].class);
                 Integer[] output = Arrays.copyOf(input, input.length);
                 MergeSort<Integer> mergeSort = new MergeSort<>();
                 stopwatch.start();
@@ -50,8 +51,6 @@ public class MergesortRoute extends BaseRoute {
 
                 result.setInput(input);
                 result.setOutput(output);
-//            } catch (ClassCastException ex) {
-
             } catch (ActionInputException ex) {
                 return handleActionInputException(ex, response);
             } catch (Exception ex) {
