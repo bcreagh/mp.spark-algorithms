@@ -93,5 +93,33 @@
         6432
       ]
     }
+  },
+  {
+  "name": "Shell Sort",
+  "description": "A simple and efficient sorting algorithm",
+  "route": "shellsort",
+  "instructions": "Input some numbers to be sorted",
+  "readme": {
+    "data": ""
+  },
+  "examples": [],
+  "requestDetails": {
+    "httpMethod": "POST",
+    "inputType": "JSON",
+    "inputTemplate": [
+      345,
+      8,
+      98,
+      3352,
+      78,
+      9879,
+      112,
+      873,
+      976,
+      2875,
+      8676,
+      6432
+    ]
   }
+}
 ]
