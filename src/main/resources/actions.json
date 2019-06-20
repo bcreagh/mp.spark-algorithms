@@ -95,6 +95,21 @@
     }
   },
   {
+    "name": "Merge Sort Random",
+    "description": "Mergesort with randomly generated input",
+    "route": "mergesort-random",
+    "instructions": "Type in the number of items to generated and sorted (1000000000 MAX)",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "TEXT",
+      "inputTemplate": "50000"
+    }
+  },
+  {
   "name": "Shell Sort",
   "description": "A simple and efficient sorting algorithm",
   "route": "shellsort",
