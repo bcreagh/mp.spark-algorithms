@@ -2,15 +2,17 @@ package com.bcreagh.mpspark.routes;
 
 import com.bcreagh.mpspark.mp.domain.Action;
 import com.bcreagh.mpspark.routes.routeutils.MpRoute;
+import com.bcreagh.mpspark.routes.routeutils.SimpleRoute;
 import com.bcreagh.mpspark.services.ActionService;
 
 import java.util.ArrayList;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
 
+@MpRoute
 public class ListActions extends BaseRoute {
 
-    @MpRoute
+    @SimpleRoute
     public static void listActions() {
         get(String.format("/%s/actions", SERVICE_NAME), (request, response) -> {
             ArrayList<Action> actions = ActionService.getAllActions();

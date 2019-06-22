@@ -2,14 +2,16 @@ package com.bcreagh.mpspark;
 
 import com.bcreagh.mpspark.exceptions.InitializationException;
 import com.bcreagh.mpspark.mp.utilities.logger.Logger;
-import com.bcreagh.mpspark.routes.BaseRoute;
+import com.bcreagh.mpspark.routes.routeutils.TypedRoute;
 import com.bcreagh.mpspark.routes.routeutils.MpRoute;
+import com.bcreagh.mpspark.routes.routeutils.SimpleRoute;
 import com.bcreagh.mpspark.services.ActionService;
 import com.bcreagh.mpspark.services.ConfigService;
 import org.reflections.Reflections;
 import spark.Filter;
 
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -49,20 +51,26 @@ public class App
         });
     }
 
+    @SuppressWarnings("unchecked")
     private static void initializeRouteClasses() {
         Reflections reflections = new Reflections("com.bcreagh.mpspark.routes");
-        Set<Class<? extends BaseRoute>> routeClasses = reflections.getSubTypesOf(BaseRoute.class);
-        for (Class<? extends BaseRoute> route : routeClasses) {
+        Set<Class<?>> routeClasses = (Set<Class<?>>) reflections.getTypesAnnotatedWith(MpRoute.class);
+        for (Class<?> route : routeClasses) {
             initializeRoutes(route);
         }
     }
 
-    private static void initializeRoutes(Class<? extends BaseRoute> klass) {
+    private static void initializeRoutes(Class<?> klass) {
         try {
-            List<Method> methods = getMethodsAnnotatedWithRoute(klass);
-            for (Method method : methods) {
-                Logger.log("Initializing route: " + method.getName());
+            List<Method> simpleRouteMethods = getMethodsAnnotatedMethods(SimpleRoute.class, klass);
+            for (Method method : simpleRouteMethods) {
+                Logger.log("Initializing simple route: " + method.getName());
                 method.invoke(klass);
+            }
+            List<Method> algoRouteMethods = getMethodsAnnotatedMethods(TypedRoute.class, klass);
+            for (Method method : algoRouteMethods) {
+                Logger.log("Initializing algo route: " + method.getName());
+                method.invoke(klass, klass);
             }
         } catch (IllegalAccessException | InvocationTargetException ex) {
             throw new InitializationException("There was a problem initializing the routes", ex);
@@ -70,13 +78,13 @@ public class App
 
     }
 
-    public static List<Method> getMethodsAnnotatedWithRoute(final Class<?> type) {
+    public static List<Method> getMethodsAnnotatedMethods(final Class<? extends Annotation> annotation, Class<?> type) {
         final List<Method> methods = new ArrayList<>();
         Class<?> klass = type;
         while (klass != Object.class) {
             final List<Method> allMethods = new ArrayList<>(Arrays.asList(klass.getDeclaredMethods()));
             for (final Method method : allMethods) {
-                if (method.isAnnotationPresent(MpRoute.class)) {
+                if (method.isAnnotationPresent(annotation)) {
                     methods.add(method);
                 }
             }
