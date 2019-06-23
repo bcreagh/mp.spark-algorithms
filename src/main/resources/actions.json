@@ -98,7 +98,7 @@
     "name": "Merge Sort Random",
     "description": "Mergesort with randomly generated input",
     "route": "mergesort-random",
-    "instructions": "Type in the number of items to generated and sorted (1000000000 MAX)",
+    "instructions": "Type in the number of items to generated and sorted (100000000 MAX)",
     "readme": {
       "data": ""
     },
@@ -110,31 +110,74 @@
     }
   },
   {
-  "name": "Shell Sort",
-  "description": "A simple and efficient sorting algorithm",
-  "route": "shellsort",
-  "instructions": "Input some numbers to be sorted",
-  "readme": {
-    "data": ""
+    "name": "Shell Sort",
+    "description": "A simple and efficient sorting algorithm",
+    "route": "shellsort",
+    "instructions": "Input some numbers to be sorted",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "JSON",
+      "inputTemplate": [
+        345,
+        8,
+        98,
+        3352,
+        78,
+        9879,
+        112,
+        873,
+        976,
+        2875,
+        8676,
+        6432
+      ]
+    }
   },
-  "examples": [],
-  "requestDetails": {
-    "httpMethod": "POST",
-    "inputType": "JSON",
-    "inputTemplate": [
-      345,
-      8,
-      98,
-      3352,
-      78,
-      9879,
-      112,
-      873,
-      976,
-      2875,
-      8676,
-      6432
-    ]
+  {
+    "name": "Quicksort",
+    "description": "In-place sorting algorthim with excellent average case performance",
+    "route": "quicksort",
+    "instructions": "Input some numbers to be sorted",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "JSON",
+      "inputTemplate": [
+        345,
+        8,
+        98,
+        3352,
+        78,
+        9879,
+        112,
+        873,
+        976,
+        2875,
+        8676,
+        6432
+      ]
+    }
+  },
+  {
+    "name": "Quicksort Random",
+    "description": "Quicksort with random input",
+    "route": "quicksort-random",
+    "instructions": "Type in the number of items to generated and sorted (100000000 MAX)",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "TEXT",
+      "inputTemplate": "50000"
+    }
   }
-}
 ]
