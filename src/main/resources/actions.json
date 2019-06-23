@@ -179,5 +179,34 @@
       "inputType": "TEXT",
       "inputTemplate": "50000"
     }
+  },
+  {
+    "name": "Quick Select",
+    "description": "Selects the kth smallest item",
+    "route": "quickselect",
+    "instructions": "Click the \"?\" button on the right to see some sample input!",
+    "readme": {
+      "data": ""
+    },
+    "examples": [],
+    "requestDetails": {
+      "httpMethod": "POST",
+      "inputType": "JSON",
+      "inputTemplate": {
+        "input": [
+          246,
+          643,
+          4,
+          92736,
+          47285,
+          27,
+          999,
+          87652,
+          124,
+          43
+        ],
+        "k": 3
+      }
+    }
   }
 ]
