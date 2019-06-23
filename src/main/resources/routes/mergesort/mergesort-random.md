@@ -19,7 +19,7 @@ Mergesort is a stable sorting algorithm.
 
 ## Instructions for trying Mergesort
 
-To try it out, click the "Try it" button. All you have to do is enter any number from 0 to 1000000000.
+To try it out, click the "Try it" button. All you have to do is enter any number from 0 to 100000000.
 An array will be generated with that number of elements in it. Each element will have a random value.
 Then this array will be sorted using mergesort!
     
